@@ -1,0 +1,4 @@
+npx create-next-app@latest miweb
+cd miweb
+npm install framer-motion lucide-react
+npm run dev
