@@ -1,0 +1,76 @@
+// RIASEG Landing Page - Fully compatible with React (Vite / CRA / GoDaddy)
+// No Next.js dependencies. No absolute imports.
+// Just place this in src/App.jsx and it will run.
+
+
+import React from "react"; from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { IconBolt, IconShield, IconUsers, IconChartLine, IconMail } from "lucide-react";
+
+
+// Single-file React landing page component (Tailwind CSS assumed globally)
+// Default export: LandingPage
+// Notes: replace assets, API endpoints and keys with your production values.
+
+
+export default function LandingPage() {
+return (
+<div className="min-h-screen bg-gradient-to-br from-slate-50 to-white text-slate-900 antialiased">
+{/* NAV */}
+<header className="w-full py-6 flex items-center justify-between px-6 lg:px-20">
+<div className="flex items-center space-x-4">
+<img src="/assets/logo-riaseg.png" alt="RIASEG Logo" className="h-14 w-auto drop-shadow-lg" />
+<span className="text-2xl font-bold tracking-widest text-white">RIASEG</span>
+</div>
+<nav className="hidden md:flex items-center space-x-10 text-white/90 font-medium">
+<a href="#servicios" className="hover:text-white transition">Servicios</a>
+<a href="#ia" className="hover:text-white transition">IA</a>
+<a href="#alianzas" className="hover:text-white transition">Alianzas</a>
+<a href="#calculadora" className="hover:text-white transition">Cotizador</a>
+<a href="#contacto" className="hover:text-white transition">Contacto</a>
+</nav>
+</header>
+
+
+{/* HERO */}
+<main className="max-w-7xl mx-auto px-6 py-16">
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<motion.section
+initial={{ opacity: 0, x: -40 }}
+animate={{ opacity: 1, x: 0 }}
+transition={{ duration: 0.6 }}
+>
+<h2 className="text-4xl md:text-5xl font-extrabold leading-tight">
+Protección basada en estrategia. Confianza basada en resultados
+</h2>
+<p className="mt-4 text-lg text-slate-600">
+Somos una agencia asesora y productora de seguros que une experiencia local con
+inteligencia artificial para dar respuestas rápidas, transparentes y seguras.
+</p>
+
+
+<div className="mt-6 flex gap-3">
+<Button>Solicitar evaluación</Button>
+<Button variant="ghost">Ver casos de éxito</Button>
+</div>
+
+
+<div className="mt-8 grid grid-cols-2 gap-4">
+<StatCard icon={<IconShield />} label="Cobertura" value="+120 productos" />
+<StatCard icon={<IconUsers />} label="Clientes" value="+300 empresas" />
+<StatCard icon={<IconChartLine />} label="Ahorros estimados" value="Hasta 27%" />
+<StatCard icon={<IconBolt />} label="IA Integrada" value="Chat & Detección" />
+</div>
+</motion.section>
+
+
+{/* SIDE - Interactive preview */}
+<motion.aside
+className="bg-white rounded-2xl shadow-xl p-6"
+initial={{ opacity: 0, y: 40 }}
+animate={{ opacity: 1, y: 0 }}
+transition={{ duration: 0.6, delay: 0.15 }}
+>
+}risk
